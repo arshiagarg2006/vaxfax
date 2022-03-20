@@ -1,9 +1,12 @@
+from flask import Flask, render_template, request
+import random
 import csv
-from flask import Flask, render_template, requests
 
-
-app = Flask(__name__)
-
+app = Flask(  
+	__name__,
+	template_folder='templates',  
+	static_folder='static'  
+)
 
 @app.route('/')
 def index():
@@ -12,8 +15,9 @@ def index():
 @app.route('/getInfo', methods= ['GET', 'POST'])
 def getInfo():
   info = ""
-  state = requests.form('select1')
-  vaccine = requests.form('select2')
+  state = request.form['select1']
+  vaccine = request.form['select2']
+
 
   vaxfile = "static/vax.csv"
   
@@ -32,27 +36,22 @@ def getInfo():
   for row in rows:
     if (state in row[3]) & ("2020" in row[4]) & ("13-17" in row[6]):
       if ((row[0] == "HPV") & ("Males and Females" in row[1])) or row[0] != "HPV":
-        if vaccine == "Meningococcal conjugate" & row[0] == "Meningococcal Conjugate":
-          info = info + vaccine + "vacinations with a " + row[1] + "have a " + row[7] + "coverage in your state."
-        elif vaccine == "Tdap" & row[0] == "Tdap":
-          info = info + vaccine + "vacinations with a " + row[1] + "have a " + row[7] + "coverage in your state."
-        elif vaccine == "Vericella":
-          info = info + vaccine + "vacinations with a " + row[1] + "have a " + row[7] + "coverage in your state."
-        elif vaccine == "HPV":
-          info = info + vaccine + "vacinations with a " + row[1] + "have a " + row[7] + "coverage in your state."
-        elif vaccine == "Hepatitis A":
-          info = info + vaccine + "vacinations with a " + row[1] + "have a " + row[7] + "coverage in your state."
-        elif vaccine == "MMR":
-          info = info + vaccine + "vacinations with a " + row[1] + "have a " + row[7] + "coverage in your state."
-        elif vaccine == "Hepatitis B":
-          info = info + vaccine + "vacinations with a " + row[1] + "have a " + row[7] + "coverage in your state."
-        # print(row[0] + " " + fields[1] + row[1] + " " + fields[7] + row[7])
+        if (vaccine == "Meningococcal conjugate") & (row[0] == "Meningococcal Conjugate"):
+          info = info + vaccine + " vacinations with a " + row[1] + " have a " + row[7] + "% coverage in your state."
+        elif (vaccine == "Tdap") & (row[0] == "Tdap"):
+          info = info + vaccine + " vacinations with a " + row[1] + " have a " + row[7] + "% coverage in your state."
+        elif (vaccine == "Vericella") & (row[0] == "Vericella"):
+          info = info + vaccine + " vacinations with a " + row[1] + " have a " + row[7] + "% coverage in your state."
+        elif (vaccine == "HPV") & (row[0] == "HPV"):
+          info = info + vaccine + " vacinations with a " + row[1] + " have a " + row[7] + "% coverage in your state."
+        elif (vaccine == "Hepatitis A") & (row[0] == "Hep A"):
+          info = info + vaccine + " vacinations with a " + row[1] + " have a " + row[7] + "% coverage in your state."
+        elif (vaccine == "MMR") & (row[0] == "MMR"):
+          info = info + vaccine + " vacinations with a " + row[1] + " have a " + row[7] + "% coverage in your state."
+        elif (vaccine == "Hepatitis B") & (row[0] == "Hep B"):
+          info = info + vaccine + " vacinations with a " + row[1] + " have a " + row[7] + "% coverage in your state."
+        
   
-
-
-
-
-
 
   reqfile = "static/req.csv"
   
@@ -74,18 +73,47 @@ def getInfo():
           rows1.append(row)
 
   if vaccine == "Meningococcal conjugate":
-    requirement(1, state)
+    if (requirement(1, state) == "true"):
+      info += " " + vaccine + " is mandated for students in this state."
+    else:
+      info += " " + vaccine + " is not mandated for students in this state."
   elif vaccine == "Tdap":
-    print(requirement(2, state))
-  elif vaccine == "Vericella":
-    print(requirement(3, state))
+    if (requirement(2, state) == "true"):
+      info += " " + vaccine + " is mandated for students in this state."
+    else:
+      info += " " + vaccine + " is not mandated for students in this state."
+  elif vaccine == "Varicella":
+    if (requirement(3, state) == "true"):
+      info += " " + vaccine + " is mandated for students in this state."
+    else:
+      info += " " + vaccine + " is not mandated for students in this state."
   elif vaccine == "HPV":
-    print(requirement(4, state))
+    if (requirement(4, state) == "true"):
+      info += " " + vaccine + " is mandated for students in this state."
+    else:
+      info += " " + vaccine + " is not mandated for students in this state."
   elif vaccine == "Hepatitis A":
-    print(requirement(5, state))
+    if (requirement(5, state) == "true"):
+      info += " " + vaccine + " is mandated for students in this state."
+    else:
+      info += " " + vaccine + " is not mandated for students in this state."
   elif vaccine == "MMR":
-    print(requirement(6, state))
+    if (requirement(6, state) == "true"):
+      info += " " + vaccine + " is mandated for students in this state."
+    else:
+      info += " " + vaccine + " is not mandated for students in this state."
   elif vaccine == "Hepatitis B":
-    print(requirement(7, state))
-if __name__ == '__main__':
-	app.run()
+    if (requirement(7, state) == "true"):
+      info += " " + vaccine + " is mandated for students in this state."
+    else:
+      info += " " + vaccine + " is not mandated for students in this state."
+
+  return render_template('index.html', info = info)
+ 
+
+if __name__ == "__main__":  
+	app.run( 
+		host='0.0.0.0',  
+		port=random.randint(2000, 9000),  
+    debug = True
+	)
