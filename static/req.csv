@@ -1,0 +1,52 @@
+State, Meningococcal, TDAP, Varicella, HPV, HepA, MMR, HepB
+Alabama, false, true, true, false, false, true, false
+Alaska, false, true, false, false, true, true, true
+Arizona, true, true, true, false, true, true, true
+Arkansas, true, true, true, false, true, true, true
+California, false, true, true, false, false, true, true
+Colorado, false, true, true, false, false, true, true
+Connecticut, true, true, true, false, true, true, true
+Delaware, true, true, true, false, false, true, true
+Columbia, true, true, true, true, true, true, true
+Florida, false, true, true, false, false, true, true
+Georgia, true, true, true, false, true, true, true
+Hawaii, true, true, true, true, true, true, true
+Idaho, true, true, false, false, true, true, true
+Illinois, true, true, true, false, false, true, true
+Indiana, true, true, false, false, true, true, true
+Iowa, true, true, true, false, false, true, true
+Kansas, true, true, true, false, true, true, true
+Kentucky, true, true, true, false, true, true, true
+Louisiana, true, true, true, false, false, true, true
+Maine, true, true, true, false, false, true, true
+Maryland, true, true, true, false, false, true, true
+Massachusetts, true, true, true, false, false, true, true 
+Michigan, true, true, true, false, false, true, true
+Minnesota, true, true, true, false, true, true, true
+Mississippi, false, true, false, false, false, true, true 
+Missouri, true, true, false, false, false, true, true
+Montana, false, true, true, false, false, true, true
+Nebraska, false, true, true, false, false, true, true
+Nevada, true, true, false, false, true, true, true
+New Hampshire, false, true, true, false, false, true, true  
+New Jersey, true, true, true, false, false, true, true
+New Mexico, true, true, true, false, true, true, true
+New York, true, true, true, false, false, true, true
+North Carolina, true, true, true, false, false, true, true 
+North Dakota, true, true, true, false, true, true, true
+Ohio, true, true, false, false, true, true, true
+Oklahoma, false, true, true, false, true, true, true
+Oregon, false, true, true, false, true, true, true
+Pennsylvania, true, true, true, false, true, true, true 
+Rhode Island, true, true, true, true, true, true, true
+South Carolina, false, true, true, false, true, true, true
+South Dakota, true, true, false, false, false, true, false 
+Tennessee, false, true, true, false, true, true, true
+Texas, true, true, true, false, true, true, true
+Utah, true, true, true, false, true, true, true
+Vermont, true, true, true, false, false, true, true
+Virginia, true, true, true, true, true, true, true
+Washington, false, true, true, false, false, true, true
+West Virginia, true, true, false, false, false, true, true
+Wisconsin, false, true, true, false, false, true, true
+Wyoming, false, true, true, false, false, true, true
