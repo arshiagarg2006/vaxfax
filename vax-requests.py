@@ -69,7 +69,8 @@ elif vaccine == "MMR":
   print(requirement(6, state))
 elif vaccine == "HepB":
   print(requirement(7, state))
-
+if __name__ == '__main__':
+	app.run()
 
 
 
