@@ -7,6 +7,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
 
   </head>
   <body>
@@ -56,7 +57,8 @@
       <h1 class="header center purple-text">VAXFAX</h1>
       <h2 class="center teal-text">__________________________________</h2>
       <h4> Select State:
-        <select action = "/getInfo" id="select1">
+        <form method="POST" action = "/getInfo" enctype="text/plain	">
+        <select name="select1">
             <option value="Alabama">Alabama</option>
             <option value="Alaska">Alaska</option>
             <option value="Arizona">Arizona</option>
@@ -108,10 +110,12 @@
             <option value="Wisconsin">Wisconsin</option>
             <option value="Wyoming">Wyoming</option>
         </select>
+      
     </h4>
 
     <h4>Select Vaccine:
-        <select action= "/getInfo" id="select2">
+     
+        <select  name="select2">
             <option value="Tdap">Tdap</option>
             <option value="Hepatitis A">Hepatitis A</option>
             <option value="Hepatitis B">Hepatitis B</option>
@@ -120,12 +124,15 @@
             <option value="Varicella">Varicella</option>
             <option value="HPV">HPV</option>
         </select>
+      
     </h4>
 
     
-    <h4>Phone Number:<input type="text" id="myText" value="111-111-2222">
+    <h4>
+          <button type="submit">Go</button>
 
     </h4>
+      </form>
           
         <script>
           
@@ -146,7 +153,7 @@
   <div class="white">
     <br>
     <h3 class="header center purple-text">Coverage & Mandates</h3>
-    <h5>    </h5>
+    <h5>  {{ info }}  </h5>
 </div>  
   <div class="valign-wrapper white">
     <div class="container">
