@@ -1,12 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>VAXFAX</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  </head>
+  <body>
+    <nav class="reg blue" role="navigation">
+     <div class="nav-wrapper container blue">
+       <a href="" id="logo-container" class="navbar-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-bandaid-fill" viewBox="0 0 22 16">
+            <path d="m2.68 7.676 6.49-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Zm5.71-2.858a.5.5 0 1 0-.708.707.5.5 0 0 0 .707-.707ZM6.974 6.939a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707ZM5.56 8.354a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708Zm2.828 2.828a.5.5 0 1 0-.707-.707.5.5 0 0 0 .707.707Zm1.414-2.121a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707Zm1.414-.707a.5.5 0 1 0-.706-.708.5.5 0 0 0 .707.708Zm-4.242.707a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707Zm1.414-.707a.5.5 0 1 0-.707-.708.5.5 0 0 0 .707.708Zm1.414-2.122a.5.5 0 1 0-.707.707.5.5 0 0 0 .707-.707ZM8.646 3.354l4 4 .708-.708-4-4-.708.708Zm-1.292 9.292-4-4-.708.708 4 4 .708-.708Z"/>
+          </svg>
+      </a>
+      
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a class="modal-trigger waves-effect purple btn-large" href="#modal1">About</a>
+        </li>
+        <li>
+          <a class="dropdown-trigger waves-effect purple btn-large" href='#' data-target='dropdown1'>Vaccine Info</a>
+        </li>
+        <li>
+          <input type="text black"  placeholder="Search..">
+        </li>
+      </ul>
+      <ul id="nav-mobile" class="right sidenav">
+        <li>
+          <!--waves modal button-->
+          <a class="modal-trigger waves-effect btn-large" href="#modal1">About</a>
+        </li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="right sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
     
-</body>
+      <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="https://www.cdc.gov/vaccines/hcp/vis/vis-statements/tdap.html">Tdap</a></li>
+        <li><a href="https://www.cdc.gov/vaccines/parents/diseases/hepa.html">Hepatitis A</a></li>
+        <li><a href="https://www.cdc.gov/hepatitis/hbv/vaccchildren.htm#guidelines">Hepatitis B</a></li>
+        <li><a href="https://www.cdc.gov/meningococcal/vaccine-info.html">Meningococcal conjugate</a></li>
+        <li><a href="https://www.cdc.gov/vaccines/vpd/mmr/public/index.html#:~:text=Get%20MMR%20Vaccine%3F-,Children,days%20after%20the%20first%20dose">MMR</a></li>
+        <li><a href="https://www.cdc.gov/chickenpox/hcp/index.html">Varicella</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="valign-wrapper white">
+    <div class="container">
+      <h1 class="header center purple-text">VAXFAX</h1>
+      <h2 class="center teal-text">__________________________________</h2>
+      <h4> Select State:
+        <select id="select1">
+            <option value="Alabama">Alabama</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="California">California</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Delaware">Delaware</option>
+            <option value="Florida">Florida</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Illinois">Illinois</option>
+            <option value="Indiana">Indiana</option>
+            <option value="Iowa">Iowa</option>
+            <option value="Kansas">Kansas</option>
+            <option value="Kentucky">Kentucky</option>
+            <option value="Lousiana">Lousiana</option>
+            <option value="Maine">Maine</option>
+            <option value="Maryland">Maryland</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="Michigan">Michigan</option>
+            <option value="Minnesota">Minnesota</option>
+            <option value="Mississippi">Mississippi</option>
+            <option value="Missouri">Missouri</option>
+            <option value="Montana">Montana</option>
+            <option value="Nebraska">Nebraska</option>
+            <option value="Nevada">Nevada</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="New Jersey">New Jersey</option>
+            <option value="New Mexico">New Mexico</option>
+            <option value="New York">New York</option>
+            <option value="North Carolina">North Carolina</option>
+            <option value="North Dakota">North Dakota</option>
+            <option value="Ohio">Ohio</option>
+            <option value="Oklahoma">Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pennsylvania">Pennsylvania</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="South Carolina">South Carolina</option>
+            <option value="South Dakota">South Dakota</option>
+            <option value="Tennessee">Tennessee</option>
+            <option value="Texas">Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont">Vermont</option>
+            <option value="Virginia">Virginia</option>
+            <option value="Washington">Washington</option>
+            <option value="West Virginia">West Virginia</option>
+            <option value="Wisconsin">Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+        </select>
+    </h4>
+
+    <h4>Select Vaccine:
+        <select id="select2">
+            <option value="Tdap">Tdap</option>
+            <option value="Hepatitis A">Hepatitis A</option>
+            <option value="Hepatitis B">Hepatitis B</option>
+            <option value="Meningococcal conjugate">Meningococcal conjugate</option>
+            <option value="MMR">MMR</option>
+            <option value="Varicella">Varicella</option>
+        </select>
+    </h4>
+
+    
+    <h4>Phone Number:<input type="text" id="myText" value="111-111-2222">
+
+    </h4>
+          
+        <script>
+          
+        function myFunction() {
+            var x = document.getElementById("myText").value;
+            document.getElementById("demo").innerHTML = x;
+        }
+        </script>
+    </div> 
+  </div>
+
+
+     <div class="valign-wrapper white">
+    <div class="container">
+      <h2 class="center teal-text">__________________________________</h2>
+    </div> 
+  </div>
+  <div class="white">
+    <br>
+    <h3 class="header center purple-text">Coverage & Mandates</h3>
+    <h5>    </h5>
+</div>  
+  <div class="valign-wrapper white">
+    <div class="container">
+      <h2 class="center teal-text">__________________________________</h2>
+    </div> 
+  </div>
+  <div class="white">
+    <br>
+    <h3 class="header center purple-text">More Information</h3>
+  <div class="carousel">
+    <a class="carousel-item" href="https://a.scpr.org/i/5047c106d876e5c2d4c5ddc6c0ffa168/166899-full.jpg" target="_blank"><img src="https://a.scpr.org/i/5047c106d876e5c2d4c5ddc6c0ffa168/166899-full.jpg"></a>
+    <a class="carousel-item" href="https://portal.ct.gov/-/media/Departments-and-Agencies/DPH/dph/infectious_diseases/immunization/School-Survey-2019--20/Percentage-of-Vaccinated-Kindergartners-2019-2020.png?sc_lang=en&h=381.333&w=685.778&hash=22C4D9CAE01CAE8C2935419A5BBC0ADE" target="_blank"><img src="https://portal.ct.gov/-/media/Departments-and-Agencies/DPH/dph/infectious_diseases/immunization/School-Survey-2019--20/Percentage-of-Vaccinated-Kindergartners-2019-2020.png?sc_lang=en&h=381.333&w=685.778&hash=22C4D9CAE01CAE8C2935419A5BBC0ADE"></a>
+    <a class="carousel-item" href="https://149400146.v2.pressablecdn.com/wp-content/uploads/2021/03/SOTI_SocialMediaGraphics_Facebook6.jpg" target="_blank"><img src="https://149400146.v2.pressablecdn.com/wp-content/uploads/2021/03/SOTI_SocialMediaGraphics_Facebook6.jpg"></a>
+    <a class="carousel-item" href="https://cdn.abcotvs.com/dip/images/5562584_092319-oberg-measles-vaccination-vaccine-statistics.jpg" target="_blank"><img src="https://cdn.abcotvs.com/dip/images/5562584_092319-oberg-measles-vaccination-vaccine-statistics.jpg"></a>
+    <a class="carousel-item" href="https://www.bcbs.com/sites/default/files/uploads/inline-images/hoa.childhood.vaccinations.exhibit.06.gif" target="_blank"><img src="https://www.bcbs.com/sites/default/files/uploads/inline-images/hoa.childhood.vaccinations.exhibit.06.gif"></a>
+        </div>
+    <br>
+    <br>
+  </div>
+  <br>
+  
+  <div class="center-align row center white">
+    <div class="center-align card col s12 m6 l3 purple">
+      <br>
+      <h4 class="white-text">Creators</h4>
+      <p>
+        <ul>
+          <li>
+            <a>Pranaya Murugan</a>
+          </li>
+          <li>
+            <a>Arshia Garg</a>
+          </li>
+          <li>
+            <a>Nishita Banushali</a>
+          </li>
+      </ul>
+    </div>
+    <div class="center-align card col s12 m6 l3 purple">
+      <br>
+      <h4 class="white-text">Services</h4>
+      <p>
+        <ul>
+          <li>
+            <a href="audible.com" target="_blank">Instructions</a>
+          </li>
+          <li>
+            <a href="bookofthemonth.com" target="_blank">User Guide</a>
+          </li>
+          <li>
+            <a href="libbyapp.com" targe="_blank">Gaming App</a>
+          </li>
+      </ul>
+    </div>
+    <div class="center-align card col s12 m6 l3 purple">
+      <br>
+      <h4 class="white-text">Support</h4>
+      <p>
+        <ul>
+          <li>
+            <a href="https://www.penguinrandomhouse.com/authors/2154240/kristan-higgins" target="_blank">Repair</a>
+          </li>
+          <li>
+            <a href="https://www.penguinrandomhouse.com/authors/2140230/riley-sager" target="_blank">Help</a>
+          </li>
+          <li>
+            <a href="https://www.penguinrandomhouse.com/authors/2204934/megha-majumdar" target="_blank">Subscriptions</a>
+          </li>
+      </ul>
+    </div>
+    <div class="center-align card col s12 m6 l3 purple">
+      <br>
+      <h4 class="white-text">Extra</h4>
+      <p>
+        <ul>
+          <li>
+            <a href="https://www.penguinrandomhouse.com/authors/2154240/kristan-higgins" target="_blank">Customize</a>
+          </li>
+          <li>
+            <a href="https://www.penguinrandomhouse.com/authors/2140230/riley-sager" target="_blank">Locations</a>
+          </li>
+          <li>
+            <a href="https://www.penguinrandomhouse.com/authors/2204934/megha-majumdar" target="_blank">Accesories</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+    
+  <div class="sidenav-overlay"></div>
+  <div class="drag-target"></div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>About the Site</h4>
+      <p>Our focus is on spreading correct vaccination information and keeping users up to date with the very thing that saves lives. When users enter their state, vaccine, and phone number, Vaxfax will take the stress off of parents and keep the focus on their child's safety. A scheduled test will be sent on August 1st (right before school), resources will be available to provide an overview of the vaccines, and vaccine coverage by state will be displayed. Stay safe, with Vaxfax!.</p>
+    </div>
+    <div class="modal-footer white">
+      <a href="#!" class="modal-close waves-effect purple btn-flat white-text">Close</a>
+    </div>
+  </div>
+
+      <script src="script.js"></script>
+  </body>
 </html>
